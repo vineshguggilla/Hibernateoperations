@@ -1,5 +1,6 @@
 package com.crud;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.hibernate.Query;
@@ -11,25 +12,36 @@ public class Crudoperations {
 
 	public static void main(String[] args) {
 
-		//saveoperation();
-		//deleteopertion();
+		saveoperation();
+		// deleteopertion();
 
-		 //updateopertion();
-		
-		//readOpertion();
-		
-		getallreadOpertion();
+		// updateopertion();
+
+		// readOpertion();
+
+		// getallreadOpertion();
 
 	}
 
 	public static void saveoperation() {
 		SessionFactory sessionFactory = DbUtil.getinstanceof();
 
-		//Projectpojo projectpojo = new Projectpojo(3, "puma", 92201, 21000);
+		Projectpojo projectpojo = new Projectpojo(6, "adiadas", 92343, 35000);
+		Projectpojo projectpojo1 = new Projectpojo(7, "trends", 92245, 96000);
+		Projectpojo projectpojo2 = new Projectpojo(8, "gvk", 92280, 54000);
+
+		List<Projectpojo> list = new ArrayList<Projectpojo>();
+
+		list.add(projectpojo);
+		list.add(projectpojo1);
+		list.add(projectpojo2);
 
 		Session session = sessionFactory.openSession();
 
-		//session.save(projectpojo);
+		for (Projectpojo projectpojo3 : list) {
+			session.save(projectpojo3);
+
+		}
 
 		Transaction transaction = session.beginTransaction();
 		transaction.commit();
@@ -70,24 +82,20 @@ public class Crudoperations {
 
 		Transaction transaction = session.beginTransaction();
 
-		transaction.commit();
-
 		session.close();
 
 	}
 
-	
-	
 	public static void readOpertion() {
 
 		SessionFactory sessionFactory = DbUtil.getinstanceof();
 
 		Session session = sessionFactory.openSession();
 
-		Projectpojo read= (Projectpojo) session.get(Projectpojo.class, 2);
-		
-		System.out.println(read.getProId()+"       "+read.getProName());
-		
+		Projectpojo read = (Projectpojo) session.get(Projectpojo.class, 2);
+
+		System.out.println(read.getProId() + "       " + read.getProName());
+
 		Transaction transaction = session.beginTransaction();
 
 		transaction.commit();
@@ -95,27 +103,23 @@ public class Crudoperations {
 		session.close();
 
 	}
-	
-	
-	
-	
+
 	public static void getallreadOpertion() {
 
 		SessionFactory sessionFactory = DbUtil.getinstanceof();
 
 		Session session = sessionFactory.openSession();
 
-		
 		Query query = session.createQuery(" from Projectpojo");
-		
+
 		List<Projectpojo> list = query.list();
-		
+
 		for (Projectpojo projectpojo : list) {
-			
-			
-			System.out.println(projectpojo.getProId()+" "+projectpojo.getProNumber()+" "+projectpojo.getProName());
+
+			System.out.println(
+					projectpojo.getProId() + " " + projectpojo.getProNumber() + " " + projectpojo.getProName());
 		}
-		
+
 		Transaction transaction = session.beginTransaction();
 
 		transaction.commit();
@@ -123,26 +127,5 @@ public class Crudoperations {
 		session.close();
 
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 }

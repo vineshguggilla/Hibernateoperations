@@ -71,7 +71,7 @@ public class Projectpojo {
 	}
 
 
-	/*public Projectpojo(int proId, String proName, long proNumber, long proSalary) {
+	public Projectpojo(int proId, String proName, int proNumber, int proSalary) {
 		super();
 		this.proId = proId;
 		this.proName = proName;
@@ -79,7 +79,7 @@ public class Projectpojo {
 		this.proSalary = proSalary;
 	}
 	
-	*/
+	
 	
 	
 	

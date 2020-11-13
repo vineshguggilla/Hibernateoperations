@@ -26,6 +26,18 @@ public class Crudoperations {
 	public static void saveoperation() {
 		SessionFactory sessionFactory = DbUtil.getinstanceof();
 
+		Projectpojo projectpojo = new Projectpojo(9, "america", 7223, 45000);
+		
+
+
+		Session session = sessionFactory.openSession();
+		
+		session.save(projectpojo);
+
+	
+		
+		/*
+
 		Projectpojo projectpojo = new Projectpojo(6, "adiadas", 92343, 35000);
 		Projectpojo projectpojo1 = new Projectpojo(7, "trends", 92245, 96000);
 		Projectpojo projectpojo2 = new Projectpojo(8, "gvk", 92280, 54000);
@@ -36,13 +48,13 @@ public class Crudoperations {
 		list.add(projectpojo1);
 		list.add(projectpojo2);
 
-		Session session = sessionFactory.openSession();
+		
 
 		for (Projectpojo projectpojo3 : list) {
 			session.save(projectpojo3);
 
 		}
-
+*/
 		Transaction transaction = session.beginTransaction();
 		transaction.commit();
 

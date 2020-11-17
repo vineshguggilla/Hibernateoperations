@@ -15,12 +15,14 @@ public class Employeecopy implements Cloneable {
 	}
 
 	public Object clone() throws CloneNotSupportedException {
-
+          //deep cloning working impl
 		Employee emp2 = new Employee(emp.getId(),emp.getName());
 
 		Employeecopy empcopy = new Employeecopy(emp2, name);
 		return empcopy;
 
+		
+		//shallow cloning  working impl
 		// return super.clone();
 
 	}

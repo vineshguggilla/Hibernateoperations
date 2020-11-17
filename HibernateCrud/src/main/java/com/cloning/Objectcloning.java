@@ -9,7 +9,7 @@ public class Objectcloning implements Cloneable {
 		
 		/*
 		 * 
-		 * it is process of creating exact duplicate object 
+		 *   it is process of creating exact duplicate object 
 		 * clone method is object class method
 		 * 
 		 * 

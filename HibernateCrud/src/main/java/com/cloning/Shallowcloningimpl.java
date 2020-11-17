@@ -5,7 +5,7 @@ public class Shallowcloningimpl {
 	public static void main(String[] args) throws CloneNotSupportedException {
 /*
  * 
- * it is process of creating only duplicate reference but not creating duplicate object 
+ *    it is process of creating only duplicate reference but not creating duplicate object 
  * shallow cleaning is meant for clone method to overcome this problem we should go for Deep cloning 
  * 
  */

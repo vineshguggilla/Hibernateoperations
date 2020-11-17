@@ -1,5 +1,5 @@
 package com.cloning;
-
+//Entity
 public class Employee implements Cloneable {
 
 	private int id;

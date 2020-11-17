@@ -1,5 +1,6 @@
 package com.cloning;
 
+//copy Entity
 public class Employeecopy implements Cloneable {
 
 	private Employee emp;

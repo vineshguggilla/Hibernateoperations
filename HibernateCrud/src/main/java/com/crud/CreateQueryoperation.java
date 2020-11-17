@@ -11,7 +11,8 @@ public class CreateQueryoperation {
 	public static void main(String[] args) {
 
 		//queryoperation();
-	}
+		
+		}
 	
 	
 	// if are use junit test remove static  if u r not add static
